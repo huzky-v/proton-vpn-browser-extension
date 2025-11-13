@@ -24,14 +24,8 @@ jobs:
       - name: Run build scripts
         run: npm run pack && npm run pack-ff
 
-      - name: Upload Firefox ZIP
-        uses: actions/upload-artifact@v4
+      - name: Publish Release
+        uses: ncipollo/release-action@v1
         with:
-          name: vpn-proton-firefox
-          path: vpn-proton-firefox.zip
-
-      - name: Upload Chrome ZIP
-        uses: actions/upload-artifact@v4
-        with:
-          name: vpn-proton-chrome
-          path: vpn-proton-chrome.zip
+          artifacts: "*.zip"
+          body: "Latest Release"
