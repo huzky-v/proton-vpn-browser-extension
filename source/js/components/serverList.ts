@@ -33,8 +33,7 @@ const getStrokeAttributes = (logical?: Logical): string => {
 };
 
 const sorter = new Sorter<Logical, Logical>(l => l)
-	.asc('Score')
-	.desc('Load')
+	.asc('Load')
 	.asc('Name');
 
 const sortByScore = (logicals: Logical[]) => {
@@ -43,6 +42,8 @@ const sortByScore = (logicals: Logical[]) => {
 
 	return sortedLogicals;
 };
+
+
 
 export const serverList = (
 	userTier: number,
@@ -86,7 +87,7 @@ export const serverList = (
 							  a 15.9155 15.9155 0 0 1 0 31.831
 							  a 15.9155 15.9155 0 0 1 0 -31.831"
 						/>
-						<text x="18" y="24.5" text-anchor="middle" font-size="18" fill="${getLoadColor(Number(load))}" font-weight="bold">
+						<text x="17.9" y="24.73" text-anchor="middle" font-size="18" fill="${getLoadColor(Number(load))}" font-weight="bold">
 							${load}
 						</text>
 					</svg>
