@@ -56,7 +56,7 @@ export const serverList = (
 	const connectionsAttributes: Record<string, string | number> = secureCore
 		? {exitCountry: logical.ExitCountry, entryCountry: logical.EntryCountry}
 		: {id: logical.ID};
-
+	const load = logical.Load;
 	return `
 		<div
 			${up
@@ -86,6 +86,9 @@ export const serverList = (
 							  a 15.9155 15.9155 0 0 1 0 31.831
 							  a 15.9155 15.9155 0 0 1 0 -31.831"
 						/>
+						<text x="18" y="24.5" text-anchor="middle" font-size="18" fill="${getLoadColor(Number(load))}" font-weight="bold">
+							${load}
+						</text>
 					</svg>
 				</div>
 			</div>

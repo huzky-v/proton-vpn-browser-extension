@@ -19,7 +19,7 @@ export const formatGroup = (
 	logicals: Logical[],
 	secureCore: boolean,
 	extraAttributes: Record<string, string | number> = {},
-	skipSorting = false,
+	skipSorting = true,
 	className = '',
 ): string => {
 	const count = logicals.length;
