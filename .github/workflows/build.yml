@@ -24,8 +24,13 @@ jobs:
       - name: Run build scripts
         run: npm run pack && npm run pack-ff
 
-      - name: Publish Release
-        uses: ncipollo/release-action@v1
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
         with:
-          artifacts: "*.zip"
-          body: "Latest Release"
+          tag_name: latest
+          name: Release - latest
+          files: |
+            vpn-proton-firefox.zip
+            vpn-proton-chrome.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
